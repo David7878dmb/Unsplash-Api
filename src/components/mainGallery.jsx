@@ -21,7 +21,7 @@ const HomePage = () => {
         <div className="image-grid">
           {images.map((image) => (
             <div key={image.id} className="image-item">
-              <img src={image.urls.small} alt={image.description || 'Image'} />
+              <img src={image.urls} alt={image.description || 'Image'} />
             </div>
           ))}
         </div>

@@ -1,22 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/header';
+import RandomImages from './components/randomImages';
 
-function App() {
-  const dispatch = useDispatch();
-  const photos = useSelector(state => state.search.photos);
-  const status = useSelector(state => state.search.status);
-  const error = useSelector(state => state.search.error);
-
-  useEffect(() => {
-    dispatch(fetchPhotos(''));
-  }, [dispatch]);
-
+const App = () => {
   return (
-    a
-  )
-}
-
-export default App
+    <div className="app-container">
+      <Header />
+      <Routes>
+        <Route path="/" element={<RandomImages />} />
+      </Routes>
+    </div>
+  );
+};
+export default App;

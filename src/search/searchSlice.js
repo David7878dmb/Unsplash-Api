@@ -1,27 +1,36 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
+import { FetchImagesListThunk } from "./searchThunk";
 
-export const SearchSlice = createSlice({
-    name : "search",
-    initialState:{
-        status:"idle",
-        images:[],
-        error: null,
-    },
-    reducers:{},
-    extraReducers: (builders) => {
-        builder
-            .addCase(fetchPhotos.pending, (state) => {
-                state.status = "loading";
-            })
-            .addCase(fetchPhotos.fulfilled, (state, action) => {
-                state.status = "fulfilled";
-                state.photos = action.payload;
-            })
-            .addCase(fetchPhotos.rejected, (state, action) => {
-                state.status = "rejected";
-                state.error = action.error.message;
-            });
-    },
-})
 
-export default SearchSlice.reducer;
+export const ImagesSlice = createSlice({
+    name: "imgs",
+  initialState: {
+    status: "idle",
+    randomPhotos: [],
+    searchPhotos: [],
+    error: {
+      randomPhotos: null,
+      searchPhotos: null,
+    },
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    //random
+    builder
+    .addCase(FetchImagesListThunk.pending, (state) => {
+        state.status = "pending";
+    })
+    .addCase(FetchImagesListThunk.fulfilled, (state, action) => {
+        state.status = "fulfilled";
+        state.randomPhotos = action.payload == null ? [] : action.payload;
+    })
+    .addCase(FetchImagesListThunk.rejected,(state, action) => {
+        state.status = "rejected";
+        state.error.randomPhotos = action.error.message;
+    });
+
+
+  },
+});
+
+export default ImagesSlice.reducer;
