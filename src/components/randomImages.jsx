@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FetchImagesListThunk } from '../search/searchThunk';
+import ImageCard from '../components/imageCard';
+
 const RandomImages = () => {
   const dispatch = useDispatch();
   const randomPhotos = useSelector((state) => state.imgs.randomPhotos);
@@ -20,10 +22,14 @@ const RandomImages = () => {
   }
 
   return (
-    <div className="images-container">
-      {randomPhotos.map((photo) => (
-        <img key={photo.id} src={photo.urls.small} alt={photo.alt_description} className="random-image" />
-      ))}
+    <div className="random-images">
+      {randomPhotos.length > 0 ? (
+        randomPhotos.map((photo) => (
+          <ImageCard key={photo.id} photo={photo} />
+        ))
+      ) : (
+        <p>No images found</p>
+      )}
     </div>
   );
 };

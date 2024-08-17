@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { FetchImagesListThunk } from "./searchThunk";
+import { FetchImagesListThunk, FetchSearchImagesListThunk } from "./searchThunk";
 
 
 export const ImagesSlice = createSlice({
@@ -29,6 +29,19 @@ export const ImagesSlice = createSlice({
         state.error.randomPhotos = action.error.message;
     });
 
+     //Search
+     builder
+     .addCase(FetchSearchImagesListThunk.pending, (state) => {
+       state.status = "pending";
+     })
+     .addCase(FetchSearchImagesListThunk.fulfilled, (state, action) => {
+       state.status = "fulfilled";
+       state.searchPhotos = action.payload == null ? [] : action.payload;
+     })
+     .addCase(FetchSearchImagesListThunk.rejected, (state, action) => {
+       state.status = "rejected";
+       state.error.searchPhotos = action.error.message;
+     });
 
   },
 });
