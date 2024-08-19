@@ -1,7 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//cargar datos desde localstorage
+const loadCommentsFromLocalStorage = () => {
+  const comments = localStorage.getItem('comments');
+  return comments ? JSON.parse(comments) : {};
+};
+
+//guardar datos
+const saveCommentsToLocalStorage = (comments) => {
+  localStorage.setItem('comments', JSON.stringify(comments));
+};
+
+//cargar datos
 const initialState = {
-  comments: {},
+  comments: loadCommentsFromLocalStorage(),
   modal: {
     visible: false,
     imageId: null,
@@ -14,17 +26,16 @@ const CommentSlice = createSlice({
   reducers: {
     setComment(state, action) {
       const { imageId, comment } = action.payload;
-      //state[imageId] = comment;
       state.comments[imageId] = comment;
+      saveCommentsToLocalStorage(state.comments);
     },
     loadComments(state, action) {
-      //return { ...state, ...action.payload };
       return { ...state, comments: { ...state.comments, ...action.payload }};
     },
     removeComment(state, action) {
       const { imageId } = action.payload;
-      //delete state[imageId];
       delete state.comments[imageId];
+      saveCommentsToLocalStorage(state.comments);
     },
     openModal(state, action) {
       console.log("ahh");

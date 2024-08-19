@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeModal, setComment } from '../components/description/descriptionSlice';
 
 const CommentModal = () => {
     const dispatch = useDispatch();
     const modalState = useSelector((state) => state.comments.modal);
-    const [comment, setCommentText] = useState("");
+    const currentComment = useSelector((state) => state.comments.comments[modalState.imageId] || "");
+    const [comment, setCommentText] = useState(currentComment);
+    //const [comment, setCommentText] = useState("");
+
+    useEffect(() => {
+        setCommentText(currentComment);
+    }, [currentComment]);
 
     const handleClose = () => {
         dispatch(closeModal());
