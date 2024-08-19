@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { ImagesSlice } from "../search/searchSlice";
-import favSlice from "../fav/favSlice";
-
+import FavSlice from "../fav/favSlice";
+import CommentSlice from "../components/description/descriptionSlice" 
 
 export const store = configureStore({
     reducer: {
         "imgs" : ImagesSlice.reducer,
-        "favs": favSlice,
+        "favs": FavSlice,
+        "comments": CommentSlice,
     },
 });

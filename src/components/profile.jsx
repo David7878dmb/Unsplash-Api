@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ImageCard from './imageCard';
+import ImageCardWithComment from '../components/imageComments';
+import CommentModal from './commentModal';
 
 const Profile = () => {
 
@@ -11,11 +12,12 @@ const Profile = () => {
     <div className="favorites-list">
       {favorites.length > 0 ? (
         favorites.map((photo) => (
-          <ImageCard key={photo.id} photo={photo} />
+          <ImageCardWithComment key={photo.id} photo={photo} />
         ))
       ) : (
         <p>No favorites added yet.</p>
       )}
+       <CommentModal />
     </div>
   );
 };

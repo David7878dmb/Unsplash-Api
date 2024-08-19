@@ -1,8 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, removeFav } from '../fav/favSlice'; 
+
 import corazon from '../assets/corazon.png';
 import like from '../assets/like.png';
+import download from '../assets/download.png';
+import { downloadImageThunk } from '../search/searchThunk';
 
 const ImageCard = ({ photo }) => {
     const dispatch = useDispatch();
@@ -18,10 +21,30 @@ const ImageCard = ({ photo }) => {
     }
   };
 
+  const handleDownloadClick = () => {
+    dispatch(downloadImageThunk(photo.id))
+  };
+
+
   return (
-    <div className="image-card">
-      <img src={photo.urls.small} alt={photo.alt_description} />
-      <div className="image-card-buttons">
+    <div 
+      className="image-card" 
+      style={{
+        backgroundImage: `url(${photo.urls.small})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        position: 'relative',
+        width: '500px',
+        height: '400px',
+      }}
+    >
+      <div className="image-card-buttons" style={{ 
+        position: 'absolute',
+        bottom: '10px',
+        right: '10px',
+        display: 'flex',
+        gap: '10px',
+      }}>
         <img 
           src={isFavorite ? like : corazon} 
           alt="Favorite" 
@@ -29,9 +52,9 @@ const ImageCard = ({ photo }) => {
           className="favorite-button"
         />
         <img 
-          src="../assets/download.png" 
+          src={download} 
           alt="Download"
-          onClick={() => window.open(photo.links.download, '_blank')}
+          onClick={handleDownloadClick}
           className="download-button"
         />
       </div>
