@@ -4,6 +4,7 @@ import Header from './components/header';
 import RandomImages from './components/randomImages';
 import SearchResults from './components/searchResults';
 import Profile from './components/profile';
+import "../src/style/style.css";
 
 const App = () => {
   return (

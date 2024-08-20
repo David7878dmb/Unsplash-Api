@@ -1,0 +1,32 @@
+.image__card__description{
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 90%;
+    height: 21rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    &__buttons{
+        position: absolute;
+        top: .625rem;
+        right: .625rem;
+        display: flex;
+        flex-direction: column;
+        gap: .625rem;
+        &__favorite{
+            width: 1.875rem; 
+            height: 1.875rem;
+            cursor: pointer;
+        }
+        &__download{
+            width: 1.875rem; 
+            height: 1.875rem;
+            cursor: pointer;
+        }
+        &__comment{
+            width: 1.875rem; 
+            height: 1.875rem;
+            cursor: pointer;
+        }
+    }
+}

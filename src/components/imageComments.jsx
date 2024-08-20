@@ -32,18 +32,13 @@ const ImageCardWithComment = ({ photo }) => {
 
     return (
         <div
-            className="image-card"
+            className="image__card__description"
             style={{
                 backgroundImage: `url(${photo.urls.small})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                position: 'relative',
-                width: '300px',
-                height: '200px',
             }}
         >
             <div
-                className="image-card-buttons"
+                className="image__card__description__buttons"
                 style={{
                     position: 'absolute',
                     bottom: '10px',
@@ -56,46 +51,23 @@ const ImageCardWithComment = ({ photo }) => {
                     src={isFavorite ? like : corazon}
                     alt="Favorite"
                     onClick={handleFavoriteClick}
-                    className="favorite-button"
-                    style={{
-                        width: '30px',
-                        height: '30px',
-                        cursor: 'pointer',
-                    }}
+                    className="fimage__card__description__buttons__favorite" 
                 />
                 <img
                     src={download}
                     alt="Download"
                     onClick={handleDownloadClick}
-                    className="download-button"
-                    style={{
-                        width: '30px',
-                        height: '30px',
-                        cursor: 'pointer',
-                    }}
+                    className="image__card__description__buttons__download"
                 />
                 <img
                     src={commentIcon}
                     alt="Comment"
                     onClick={handleCommentClick}
-                    className="comment-button"
-                    style={{
-                        width: '30px',
-                        height: '30px',
-                        cursor: 'pointer',
-                    }}
+                    className="image__card__description__buttons__comment"
                 />
             </div>
             {comment && <div className="comment-text" style={{
-                position: 'absolute',
-                top: '10px',
-                left: '10px',
-                color: 'black',
-                background: 'rgba(0, 0, 0, 0.5)',
-                padding: '5px',
-                borderRadius: '5px',
             }}>
-                {comment}
             </div>}
         </div>
     );

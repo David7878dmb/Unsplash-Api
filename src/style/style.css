@@ -1,0 +1,98 @@
+.header {
+  width: 100%;
+  background-color: #AFAFDC;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.header__center {
+  transform: translate(0%, 100%);
+}
+
+.profile-link {
+  display: block;
+  width: 30px;
+  height: 50px;
+  background-image: url("assets/vector.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.image__card {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 90%;
+  height: 21rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.image__card__buttons {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.image__card__buttons__favorite {
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+}
+.image__card__buttons__download {
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+}
+
+.image__card__description {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 90%;
+  height: 21rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.image__card__description__buttons {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.image__card__description__buttons__favorite {
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+}
+.image__card__description__buttons__download {
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+}
+.image__card__description__buttons__comment {
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  text-align: center;
+  background-color: #B7D3F2;
+}
+
+/*# sourceMappingURL=style.css.map */

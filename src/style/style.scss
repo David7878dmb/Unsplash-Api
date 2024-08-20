@@ -1,0 +1,16 @@
+@import './header.scss';
+@import './imageCard.scss';
+@import './imageCardDescription.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    min-width: 320px;
+    text-align: center;
+    background-color: #B7D3F2;
+  }
+

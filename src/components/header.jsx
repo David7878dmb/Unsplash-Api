@@ -19,10 +19,10 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="header-left">
+      <div className="header__left">
         <Link to="/" className="home-link">Home</Link>
       </div>
-      <div className="header-center">
+      <div className="header__center">
         <form onSubmit={handleSearch}>
           <input
             type="text"
@@ -33,9 +33,8 @@ const Header = () => {
           />
         </form>
       </div>
-      <div className="header-right">
+      <div className="header__right">
         <Link to="/profile" className="profile-link">
-          <p>Perfil</p>
         </Link>
       </div>
     </header>

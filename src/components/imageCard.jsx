@@ -7,6 +7,7 @@ import like from '../assets/like.png';
 import download from '../assets/download.png';
 import { downloadImageThunk } from '../search/searchThunk';
 
+
 const ImageCard = ({ photo }) => {
     const dispatch = useDispatch();
     const isFavorite = useSelector((state) =>
@@ -28,34 +29,25 @@ const ImageCard = ({ photo }) => {
 
   return (
     <div 
-      className="image-card" 
+      className="image__card" 
       style={{
         backgroundImage: `url(${photo.urls.small})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        position: 'relative',
-        width: '500px',
-        height: '400px',
       }}
     >
-      <div className="image-card-buttons" style={{ 
-        position: 'absolute',
-        bottom: '10px',
-        right: '10px',
-        display: 'flex',
-        gap: '10px',
+      <div className="image__card__buttons" style={{ 
+
       }}>
         <img 
           src={isFavorite ? like : corazon} 
           alt="Favorite" 
           onClick={handleFavoriteClick} 
-          className="favorite-button"
+          className="image__card__buttons__favorite"
         />
         <img 
           src={download} 
           alt="Download"
           onClick={handleDownloadClick}
-          className="download-button"
+          className="image__card__buttons__download"
         />
       </div>
     </div>
