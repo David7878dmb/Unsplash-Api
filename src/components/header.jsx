@@ -3,6 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { FetchSearchImagesListThunk } from '../search/searchThunk';
 import { useState } from 'react';
+import { PiFinnTheHumanBold } from "react-icons/pi";
+import { ImHome } from "react-icons/im";
+import { FaSearch } from "react-icons/fa";
+
 
 const Header = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -20,7 +24,9 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__left">
-        <Link to="/" className="home-link">Home</Link>
+        <Link to="/" className="header__left__link">
+        <ImHome className="header__left__link__img"/>
+        </Link>
       </div>
       <div className="header__center">
         <form onSubmit={handleSearch}>
@@ -31,11 +37,15 @@ const Header = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+
         </form>
       </div>
-      <div className="header__right">
-        <Link to="/profile" className="profile-link">
+      <div className="header__right"   
+      >
+        <Link to="/profile" className="header__right__link">
+        <PiFinnTheHumanBold className="header__right__link__img"/>
         </Link>
+        
       </div>
     </header>
   );

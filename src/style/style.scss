@@ -1,7 +1,8 @@
 @import './header.scss';
 @import './imageCard.scss';
 @import './imageCardDescription.scss';
-
+@import './commentModal.scss';
+@import './infoModal.scss';
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,6 +12,6 @@
   body {
     min-width: 320px;
     text-align: center;
-    background-color: #B7D3F2;
+    background-color: lightgray;
   }
 

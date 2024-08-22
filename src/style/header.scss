@@ -8,8 +8,39 @@
     padding-top: 1rem;
     padding-bottom: 2rem;
     &__center{
-
         transform: translate(0%,100%);
+    }
+    &__left{
+        &__link{
+            text-decoration: none;
+            color: inherit;
+            font-weight: 700;
+            font-size: inherit;
+            &__img{
+                width: 2rem;
+                height: auto;
+            }
+        }
+        &__link:hover{
+            color: #555;
+            text-decoration: underline;
+        }
+    }
+    &__right{
+        &__link{
+            text-decoration: none;
+            color: inherit;
+            font-weight: 700;
+            font-size: inherit;
+            &__img{
+                width: 2rem;
+                height: auto;
+            }
+        }
+        &__link:hover{
+            color: #555;
+            text-decoration: underline;
+        }
     }
 }
 
@@ -17,8 +48,9 @@
     display: block;
     width: 30px;
     height: 50px;
-    background-image: url('assets/vector.png');
+    //background-image: url('assets/vector.png');
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer; 
+
 }

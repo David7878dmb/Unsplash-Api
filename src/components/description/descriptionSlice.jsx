@@ -38,7 +38,6 @@ const CommentSlice = createSlice({
       saveCommentsToLocalStorage(state.comments);
     },
     openModal(state, action) {
-      console.log("ahh");
       state.modal = {
         visible: true,
         imageId: action.payload,
@@ -61,3 +60,4 @@ export const {
   closeModal,
 } = CommentSlice.actions;
 export default CommentSlice.reducer;
+
