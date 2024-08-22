@@ -35,3 +35,32 @@
         }
     }
 }
+@media screen and (min-width: 1000px) {
+.image{
+    margin-top:1.25rem;
+        display: flex;
+        flex-flow: row wrap;
+        margin-left: 1.5rem;
+        width: 100%;
+        justify-content: space-evenly;
+    &__card{
+        width: 33%;
+        display: flex;
+        position: relative;
+        &__description{
+            background-size: cover;
+            background-position: center;
+            width: 90%;
+            height: 21rem;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+            position:absolute;
+            display: flex;
+            flex-wrap: wrap;
+            &__buttons{
+                position: absolute;
+            }
+        }
+    }
+    }
+}

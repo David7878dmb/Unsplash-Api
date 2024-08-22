@@ -27,6 +27,7 @@ const ImageCard = ({ photo }) => {
 
 
   return (
+    <div className='image'>
     <div 
       className="image__card" 
       style={{
@@ -55,6 +56,7 @@ const ImageCard = ({ photo }) => {
           className="image__card__buttons__download"
         />
       </div>
+    </div>
     </div>
   );
 };

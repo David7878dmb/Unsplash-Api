@@ -77,6 +77,19 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 1000px) {
+  .image {
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  .image__card {
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+  }
+}
 .image__card__description {
   background-size: cover;
   background-position: center;
@@ -115,6 +128,35 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 1000px) {
+  .image {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 1.5rem;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+  .image__card {
+    width: 33%;
+    display: flex;
+    position: relative;
+  }
+  .image__card__description {
+    background-size: cover;
+    background-position: center;
+    width: 90%;
+    height: 21rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .image__card__description__buttons {
+    position: absolute;
+  }
+}
 .comment__modal {
   position: fixed;
   top: 0;

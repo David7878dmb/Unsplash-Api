@@ -1,4 +1,5 @@
-.image__card{
+.image{
+    &__card{
     background-size: cover;
     background-position: center;
     position: relative;
@@ -24,4 +25,21 @@
             cursor: pointer;
         }
     }
+}}
+
+@media screen and (min-width: 1000px) {
+.image{
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    &__card{
+        display: flex;
+        flex-direction: row;
+        width: 25%;
+    }
+}
+
+
+
 }
