@@ -14,7 +14,7 @@ const SearchResults = () => {
   }
 
   return (
-    <div className="search-results">
+    <div className="search__results">
     {searchPhotos.length > 0 ? (
       searchPhotos.map((photo) => (
         <ImageCard key={photo.id} photo={photo} />

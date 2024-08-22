@@ -173,7 +173,7 @@ const ImageGalleryWithSort = () => {
             case sortedOptions.likes:
                 sorted.sort((a, b) => b.likes - a.likes);
                 break;
-            default:
+            default:asd
                 return 0;
         }
         setSortedImages(sorted);

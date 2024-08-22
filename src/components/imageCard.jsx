@@ -27,25 +27,25 @@ const ImageCard = ({ photo }) => {
 
 
   return (
-    <div className='image'>
+    <div className='search__results__image'>
     <div 
-      className="image__card" 
+      className="search__results__image__card" 
       style={{
         backgroundImage: `url(${photo.urls.small})`,
       }}
     >
-      <div className="image__card__buttons">
+      <div className="search__results__image__card__buttons">
 
         {isFavorite ? (
           <FcLike 
             onClick={handleFavoriteClick} 
-            className="image__card__buttons__favorite" 
+            className="search__results__image__card__buttons__favorite" 
             style={{ cursor: 'pointer', fontSize: '24px' }} // Ajusta el estilo según necesites
           />
         ) : (
           <FaRegHeart 
             onClick={handleFavoriteClick} 
-            className="image__card__buttons__favorite" 
+            className="search__results__image__card__buttons__favorite" 
             style={{ cursor: 'pointer', fontSize: '24px' }} // Ajusta el estilo según necesites
           />
         )}
@@ -53,7 +53,7 @@ const ImageCard = ({ photo }) => {
         <IoCloudDownloadSharp 
           alt="Download"
           onClick={handleDownloadClick}
-          className="image__card__buttons__download"
+          className="search__results__image__card__buttons__download"
         />
       </div>
     </div>

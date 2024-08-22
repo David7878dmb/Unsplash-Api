@@ -49,7 +49,7 @@
   cursor: pointer;
 }
 
-.image__card {
+.search__results__image__card {
   background-size: cover;
   background-position: center;
   position: relative;
@@ -58,7 +58,7 @@
   margin: 0 auto;
   margin-bottom: 1rem;
 }
-.image__card__buttons {
+.search__results__image__card__buttons {
   position: absolute;
   top: 0.625rem;
   right: 0.625rem;
@@ -66,28 +66,41 @@
   flex-direction: column;
   gap: 0.625rem;
 }
-.image__card__buttons__favorite {
+.search__results__image__card__buttons__favorite {
   width: 1.875rem;
   height: 1.875rem;
   cursor: pointer;
 }
-.image__card__buttons__download {
+.search__results__image__card__buttons__download {
   width: 1.875rem;
   height: 1.875rem;
   cursor: pointer;
 }
 
 @media screen and (min-width: 1000px) {
-  .image {
+  .search__results {
     margin: 0;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .search__results__image {
+    width: 33%;
+    display: flex;
+    position: relative;
+  }
+  .search__results__image__card {
+    background-size: cover;
+    background-position: center;
+    width: 90%;
+    height: 21rem;
+    margin: 0;
+    margin-bottom: 1rem;
     position: relative;
     display: flex;
-    flex-direction: row;
-  }
-  .image__card {
-    display: flex;
-    flex-direction: row;
-    width: 25%;
+    flex-wrap: wrap;
   }
 }
 .image__card__description {
@@ -133,7 +146,7 @@
     margin-top: 1.25rem;
     display: flex;
     flex-flow: row wrap;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     width: 100%;
     justify-content: space-evenly;
   }
@@ -149,7 +162,6 @@
     height: 21rem;
     margin: 0 auto;
     margin-bottom: 1rem;
-    position: absolute;
     display: flex;
     flex-wrap: wrap;
   }
