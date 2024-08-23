@@ -8,7 +8,6 @@ import { FaRegHeart } from "react-icons/fa6";
 import { IoCloudDownloadSharp } from "react-icons/io5";
 import { FcLike } from "react-icons/fc";
 import { BsInfoCircle } from "react-icons/bs";
-import Select from 'react-select';
 
 const ImageCardWithComment = ({ photo }) => {
     const dispatch = useDispatch();

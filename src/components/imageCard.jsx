@@ -40,13 +40,13 @@ const ImageCard = ({ photo }) => {
           <FcLike 
             onClick={handleFavoriteClick} 
             className="search__results__image__card__buttons__favorite" 
-            style={{ cursor: 'pointer', fontSize: '24px' }} // Ajusta el estilo según necesites
+            style={{ cursor: 'pointer', fontSize: '24px' }}
           />
         ) : (
           <FaRegHeart 
             onClick={handleFavoriteClick} 
             className="search__results__image__card__buttons__favorite" 
-            style={{ cursor: 'pointer', fontSize: '24px' }} // Ajusta el estilo según necesites
+            style={{ cursor: 'pointer', fontSize: '24px' }}
           />
         )}
         
