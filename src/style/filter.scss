@@ -1,0 +1,22 @@
+.filter{
+    &__order{
+        &__tittle{
+            text-decoration: underline;
+            font-family: 'Arial Black', Gadget, sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #1A1A1A;
+            text-transform: capitalize;
+        }
+        &__select{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            border: 0;
+            text-decoration: underline;
+            text-align: center;
+            align-items: center;
+        }
+    }
+}

@@ -63,7 +63,6 @@ export const downloadImageThunk = createAsyncThunk(
   async (imageId, { getState }) => {
     try {
       const state = getState();
-      console.log("Current state:", state);
       const randomPhotos = state.imgs.randomPhotos || [];
       const searchPhotos = state.imgs.searchPhotos || [];
       const photo =

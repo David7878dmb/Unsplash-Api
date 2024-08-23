@@ -13,6 +13,7 @@
         display: flex;
         flex-direction: column;
         gap: .625rem;
+        color: white;
         &__favorite{
             width: 1.875rem; 
             height: 1.875rem;
@@ -38,26 +39,27 @@
 @media screen and (min-width: 1000px) {
 .image{
     margin-top:1.25rem;
-        display: flex;
-        flex-flow: row wrap;
-        margin-left: 1rem ;
-        width: 100%;
-        justify-content: space-evenly;
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 0 ;
+    width: 100%;
+    justify-content: space-between;
     &__card{
-        width: 33%;
+        width: 30%;
         display: flex;
         position: relative;
+        margin-bottom: 1rem;
         &__description{
             background-size: cover;
             background-position: center;
             width: 90%;
             height: 21rem;
-            margin: 0 auto;
             margin-bottom: 1rem;
-            display: flex;
-            flex-wrap: wrap;
+
             &__buttons{
                 position: absolute;
+                flex-direction: row;
+                color: white;
             }
         }
     }

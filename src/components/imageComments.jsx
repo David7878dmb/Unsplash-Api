@@ -47,11 +47,11 @@ const ImageGalleryWithSort = () => {
 
     return (
         <div>
-            <section className="gallery">
-                <div className="gallery__order">
-                    <h4 className="gallery__order__label">Ordenar por:</h4>
+            <section className="filter">
+                <div className="filter__order">
+                    <h4 className="filter__order__tittle">Ordenar por:</h4>
                     <Select 
-                        className="gallery__order-select" 
+                        className="filter__order__select" 
                         name="order-select" 
                         id="order-select" 
                         onChange={onSortOptionChange} 

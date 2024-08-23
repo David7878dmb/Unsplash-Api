@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, removeFav } from '../fav/favSlice';
 import { openModal, closeModal, setComment } from '../components/description/descriptionSlice';
-import commentIcon from '../assets/comment.png';
 import InfoModal from './info/infoModal';
 import { FaRegHeart } from "react-icons/fa6";
 import { IoCloudDownloadSharp } from "react-icons/io5";
 import { FcLike } from "react-icons/fc";
 import { BsInfoCircle } from "react-icons/bs";
-
+import { FaRegCommentDots } from "react-icons/fa";
+import { downloadImageThunk } from '../search/searchThunk';
 const ImageCardWithComment = ({ photo }) => {
     const dispatch = useDispatch();
     const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
@@ -67,10 +67,10 @@ const ImageCardWithComment = ({ photo }) => {
                 <IoCloudDownloadSharp 
                     alt="Download"
                     onClick={handleDownloadClick}
-                    className="image__card__buttons__download"
-                />
-                <img
-                    src={commentIcon}
+                    className="image__card__description__buttons__download"
+                    />
+                <FaRegCommentDots
+                   
                     alt="Comment"
                     onClick={handleCommentClick}
                     className="image__card__description__buttons__comment"
