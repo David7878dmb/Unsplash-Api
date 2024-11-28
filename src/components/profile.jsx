@@ -14,7 +14,7 @@ const Profile = () => {
       {favorites.length > 0 ? (
         <ImageGalleryWithSort photos={favorites} />
       ) : (
-        <p>No favorites added yet.</p>
+        <p>No favorites added yet</p>
       )}
        <CommentModal />
     </div>
