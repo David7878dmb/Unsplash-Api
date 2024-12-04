@@ -5,9 +5,9 @@ import { clientId, getRandomPhotosEndpoint, getSearchPhotosEndpoint } from "../A
 //random
 export const FetchImagesListThunk = createAsyncThunk(
   "imgs/fetchImagesList",
-  async () => {
+  async (page = 1) => { // Agregar soporte para la paginación
     try {
-      const url = getRandomPhotosEndpoint();
+      const url = getRandomPhotosEndpoint(page); // Modifica la URL para incluir la página
       const response = await fetch(url, {
         method: "GET",
         headers: {
@@ -24,9 +24,9 @@ export const FetchImagesListThunk = createAsyncThunk(
       }
     } catch (error) {
       console.error("Error fetching images:", error);
-      throw error;
+      throw error(error);
     }
-    }
+  }
 );
 
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FetchImagesListThunk } from '../search/searchThunk';
 import ImageCard from '../components/imageCard';
@@ -9,10 +9,18 @@ const RandomImages = () => {
   //const randomPhotos = useSelector((state) => state.imgs.randomPhotos);
   //const status = useSelector((state) => state.imgs.status);
   //const error = useSelector((state) => state.imgs.error.randomPhotos);
+  
+  const [imagesToShow, setImagesToShow] = useState(12);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    dispatch(FetchImagesListThunk());
-  }, [dispatch]);
+    dispatch(FetchImagesListThunk(page));
+  }, [dispatch, page]);
+
+  const handleLoadMore = () => {
+    setPage((prevPage) => prevPage + 1); // Incrementa la página
+    setImagesToShow((prevCount) => prevCount + 12); // Opcional, para mostrar más en pantalla
+  };
 
   if (status === 'pending') {
     return <p>Loading...</p>;
@@ -23,15 +31,21 @@ const RandomImages = () => {
   }
 
   return (
-    <div className="random-images">
+    <div>
+    <div className="random__images">
+      
       {randomPhotos.length > 0 ? (
-        randomPhotos.map((photo) => (
+        randomPhotos.slice(0, imagesToShow).map((photo) => (
           <ImageCard key={photo.id} photo={photo} />
         ))
       ) : (
         <p>No images found</p>
       )}
+
+      
     </div>
+      <button className="random__images__button" onClick={handleLoadMore}>Load More</button>
+      </div>
   );
 };
 

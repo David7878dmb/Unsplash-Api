@@ -300,6 +300,90 @@
   align-items: center;
 }
 
+.random__images__image__card {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 90%;
+  height: 21rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+.random__images__image__card__buttons {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  color: white;
+}
+.random__images__image__card__buttons__favorite {
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+}
+.random__images__image__card__buttons__download {
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+}
+.random__images__button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.random__images__button:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (min-width: 1000px) {
+  .random__images {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .random__images__image {
+    width: 30%;
+    display: flex;
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  .random__images__image__card {
+    background-size: cover;
+    background-position: center;
+    width: 90%;
+    height: 21rem;
+    margin-bottom: 1rem;
+  }
+  .random__images__image__card__buttons {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.625rem;
+  }
+  .random__images__image__card__buttons__favorite {
+    width: 1.875rem;
+    height: 1.875rem;
+    cursor: pointer;
+  }
+  .random__images__image__card__buttons__download {
+    width: 1.875rem;
+    height: 1.875rem;
+    cursor: pointer;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
