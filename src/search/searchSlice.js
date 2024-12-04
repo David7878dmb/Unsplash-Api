@@ -64,5 +64,3 @@ export const ImagesSlice = createSlice({
 
 
 export default ImagesSlice.reducer;
-
-

@@ -1,3 +1,4 @@
+
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { clientId, getRandomPhotosEndpoint, getSearchPhotosEndpoint } from "../App/api/keys";
 
