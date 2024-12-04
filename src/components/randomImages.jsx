@@ -5,9 +5,10 @@ import ImageCard from '../components/imageCard';
 
 const RandomImages = () => {
   const dispatch = useDispatch();
-  const randomPhotos = useSelector((state) => state.imgs.randomPhotos);
-  const status = useSelector((state) => state.imgs.status);
-  const error = useSelector((state) => state.imgs.error.randomPhotos);
+  const {randomPhotos, status, error} = useSelector((state) => state.imgs);
+  //const randomPhotos = useSelector((state) => state.imgs.randomPhotos);
+  //const status = useSelector((state) => state.imgs.status);
+  //const error = useSelector((state) => state.imgs.error.randomPhotos);
 
   useEffect(() => {
     dispatch(FetchImagesListThunk());

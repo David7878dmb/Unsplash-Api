@@ -24,7 +24,7 @@ export const FetchImagesListThunk = createAsyncThunk(
       }
     } catch (error) {
       console.error("Error fetching images:", error);
-      throw error(error);
+      throw error;
     }
     }
 );
@@ -46,7 +46,7 @@ export const FetchSearchImagesListThunk = createAsyncThunk(
 
       if (response.ok) {
         const data = await response.json();
-        return data.results; // Los resultados de búsqueda están en `data.results`
+        return data.results;
       } else {
         throw new Error("Failed to fetch search images");
       }
