@@ -49,74 +49,78 @@
   cursor: pointer;
 }
 
-.search__results__image__card {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  width: 90%;
-  height: 21rem;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-}
-.search__results__image__card__buttons {
-  position: absolute;
-  top: 0.625rem;
-  right: 0.625rem;
+.search__results__image {
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
-  color: white;
+  align-items: center;
+  justify-content: center;
 }
-.search__results__image__card__buttons__favorite {
+.search__results__image__bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.search__results__image__bar__buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.search__results__image__bar__buttons__favorite {
   width: 1.875rem;
   height: 1.875rem;
   cursor: pointer;
 }
-.search__results__image__card__buttons__download {
+.search__results__image__bar__buttons__download {
   width: 1.875rem;
   height: 1.875rem;
   cursor: pointer;
 }
 
 @media screen and (min-width: 1000px) {
-  .search__results {
-    margin-top: 1.25rem;
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: 0;
-    width: 100%;
-    justify-content: space-between;
-  }
   .search__results__image {
-    width: 30%;
     display: flex;
-    position: relative;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    justify-content: center;
   }
   .search__results__image__card {
     background-size: cover;
     background-position: center;
-    width: 90%;
-    height: 21rem;
+    position: relative;
+    width: 100%;
     margin-bottom: 1rem;
+    height: auto;
   }
-  .search__results__image__card__buttons {
-    position: absolute;
-    top: 0.625rem;
-    right: 0.625rem;
+  .search__results__image__card__photo {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+  .search__results__image__bar {
     display: flex;
-    flex-direction: row;
-    gap: 0.625rem;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: -1.5rem;
   }
-  .search__results__image__card__buttons__favorite {
-    width: 1.875rem;
-    height: 1.875rem;
-    cursor: pointer;
+  .search__results__image__bar__buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
   }
-  .search__results__image__card__buttons__download {
-    width: 1.875rem;
-    height: 1.875rem;
+  .search__results__image__bar__buttons__favorite, .search__results__image__bar__buttons__download {
     cursor: pointer;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .random__images {
+    margin-left: 18%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .random__images__column {
+    display: flex;
+    flex-direction: column;
   }
 }
 .image__card__description {
@@ -300,90 +304,6 @@
   align-items: center;
 }
 
-.random__images__image__card {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  width: 90%;
-  height: 21rem;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-}
-.random__images__image__card__buttons {
-  position: absolute;
-  top: 0.625rem;
-  right: 0.625rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-  color: white;
-}
-.random__images__image__card__buttons__favorite {
-  width: 1.875rem;
-  height: 1.875rem;
-  cursor: pointer;
-}
-.random__images__image__card__buttons__download {
-  width: 1.875rem;
-  height: 1.875rem;
-  cursor: pointer;
-}
-.random__images__button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-.random__images__button:hover {
-  background-color: #0056b3;
-}
-
-@media screen and (min-width: 1000px) {
-  .random__images {
-    margin-top: 1.25rem;
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: 0;
-    width: 100%;
-    justify-content: space-between;
-  }
-  .random__images__image {
-    width: 30%;
-    display: flex;
-    position: relative;
-    margin-bottom: 1rem;
-  }
-  .random__images__image__card {
-    background-size: cover;
-    background-position: center;
-    width: 90%;
-    height: 21rem;
-    margin-bottom: 1rem;
-  }
-  .random__images__image__card__buttons {
-    position: absolute;
-    top: 0.625rem;
-    right: 0.625rem;
-    display: flex;
-    flex-direction: row;
-    gap: 0.625rem;
-  }
-  .random__images__image__card__buttons__favorite {
-    width: 1.875rem;
-    height: 1.875rem;
-    cursor: pointer;
-  }
-  .random__images__image__card__buttons__download {
-    width: 1.875rem;
-    height: 1.875rem;
-    cursor: pointer;
-  }
-}
 * {
   box-sizing: border-box;
   margin: 0;

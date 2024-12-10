@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FetchImagesListThunk } from '../search/searchThunk';
 import ImageCard from '../components/imageCard';
+import Masonry from 'react-masonry-css';
 
 const RandomImages = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const RandomImages = () => {
   //const status = useSelector((state) => state.imgs.status);
   //const error = useSelector((state) => state.imgs.error.randomPhotos);
   
-  const [imagesToShow, setImagesToShow] = useState(12);
+  const [imagesToShow, setImagesToShow] = useState(24);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -22,6 +23,13 @@ const RandomImages = () => {
     setImagesToShow((prevCount) => prevCount + 12); // Opcional, para mostrar más en pantalla
   };
 
+  const breakpointColumns = {
+    default: 4,  // 4 columnas por defecto
+    1100: 3,     // 3 columnas para pantallas más pequeñas
+    700: 2,      // 2 columnas en pantallas medianas
+    500: 1,      // 1 columna en pantallas pequeñas
+  };
+
   if (status === 'pending') {
     return <p>Loading...</p>;
   }
@@ -31,22 +39,24 @@ const RandomImages = () => {
   }
 
   return (
-    <div>
-    <div className="random__images">
-      
-      {randomPhotos.length > 0 ? (
-        randomPhotos.slice(0, imagesToShow).map((photo) => (
-          <ImageCard key={photo.id} photo={photo} />
-        ))
-      ) : (
-        <p>No images found</p>
-      )}
-
-      
+    <div className="random">
+      <Masonry
+        breakpointCols={breakpointColumns}
+        className="random__images"
+        columnClassName="random__images__column"
+      >
+        {randomPhotos.length > 0 ? (
+          randomPhotos.slice(0, imagesToShow).map((photo) => (
+            <ImageCard key={photo.id} photo={photo} />
+          ))
+        ) : (
+          <p>No images found</p>
+        )}
+      </Masonry>
+      <button className="random__images__button" onClick={handleLoadMore}>
+        Load More
+      </button>
     </div>
-      <button className="random__images__button" onClick={handleLoadMore}>Load More</button>
-      </div>
   );
 };
-
 export default RandomImages;

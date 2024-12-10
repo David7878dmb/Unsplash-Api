@@ -1,10 +1,10 @@
 @use './header.scss';
 @use './imageCard.scss';
+@use './random_images.scss';
 @use './imageCardDescription.scss';
 @use './commentModal.scss';
 @use './infoModal.scss';
 @use './filter.scss';
-@use './random_images.scss';
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,4 +16,5 @@
     text-align: center;
     background-color: lightgray;
   }
+
 

@@ -28,35 +28,36 @@ const ImageCard = ({ photo }) => {
 
   return (
     <div className='search__results__image'>
-    <div 
-      className="search__results__image__card" 
-      style={{
-        backgroundImage: `url(${photo.urls.small})`,
-      }}
-    >
-      <div className="search__results__image__card__buttons">
+      <div 
+        className="search__results__image__card">
 
-        {isFavorite ? (
-          <FcLike 
-            onClick={handleFavoriteClick} 
-            className="search__results__image__card__buttons__favorite" 
-            style={{ cursor: 'pointer', fontSize: '24px' }}
-          />
-        ) : (
-          <FaRegHeart 
-            onClick={handleFavoriteClick} 
-            className="search__results__image__card__buttons__favorite" 
-            style={{ cursor: 'pointer', fontSize: '24px' }}
-          />
-        )}
-        
-        <IoCloudDownloadSharp 
-          alt="Download"
-          onClick={handleDownloadClick}
-          className="search__results__image__card__buttons__download"
-        />
+        <img
+            className="search__results__image__card__photo"
+            src={photo.urls.thumb}
+            
+            />
       </div>
-    </div>
+
+      <div className="search__results__image__bar">
+        <div className="search__results__image__bar__buttons">
+
+          {isFavorite ? (
+            <FcLike 
+              onClick={handleFavoriteClick} 
+              className="search__results__image__bar__buttons__favorite" 
+              style={{ cursor: 'pointer', fontSize: '24px' }}
+            />
+          ) : (
+            <FaRegHeart 
+              onClick={handleFavoriteClick} 
+              className="search__results__image__bar__buttons__favorite" 
+              style={{ cursor: 'pointer', fontSize: '24px' }}
+            />
+          )}
+          
+         
+        </div>
+      </div>
     </div>
   );
 };
