@@ -4,7 +4,7 @@
 @use './imageCardDescription.scss';
 @use './commentModal.scss';
 @use './infoModal.scss';
-@use './filter.scss';
+@use './filter.scss'; 
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,4 +17,14 @@
     background-color: lightgray;
   }
 
+// .favPage{
+ 
+//     display: flex;
+    
+//     gap: 1rem;  // Añade espacio entre las imágenes
+  
+  
 
+//     display: flex;
+//     flex-direction: column;
+//   }

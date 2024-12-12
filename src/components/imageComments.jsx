@@ -55,7 +55,7 @@ const ImageGalleryWithSort = () => {
     const onSortOptionChange = ({ value }) => setSortOption(value);
 
     return (
-        <div>
+        <div className='favPage'>
             <section className="filter">
                 <div className="filter__order">
                     <h4 className="filter__order__tittle">Ordenar por:</h4>
@@ -68,17 +68,17 @@ const ImageGalleryWithSort = () => {
                     />
                 </div>
             </section>
-        <div className='random'>
-            <Masonry
-                breakpointCols={breakpointColumns}
-                className="random__images"
-                columnClassName="random__images__column"
-            >
-                {sortedImages.map(photo => (
-                    <ImageCardWithComment key={photo.id} photo={photo} />
-                ))}
-            </Masonry>
-        </div>            
+            <div className='random'>
+                <Masonry
+                    breakpointCols={breakpointColumns}
+                    className="random__images"
+                    columnClassName="random__images__column"
+                >
+                    {sortedImages.map(photo => (
+                        <ImageCardWithComment key={photo.id} photo={photo} />
+                    ))}
+                </Masonry>
+            </div>          
         </div>
     );
 };

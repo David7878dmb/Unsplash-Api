@@ -51,8 +51,10 @@
     @media screen and (min-width: 1000px) {
         .random__images {
 
+          width: 98%;
+          margin-left: 1%;
             display: flex;
-
+            
             gap: 1rem;  // Añade espacio entre las imágenes
           }
           
