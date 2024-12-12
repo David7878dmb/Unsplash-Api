@@ -75,6 +75,7 @@
 }
 .search__results__image__card__photo {
   width: 100%;
+  display: block;
 }
 .search__results__image__bar {
   display: flex;
@@ -272,6 +273,8 @@ body {
   min-width: 320px;
   text-align: center;
   background-color: lightgray;
+  background-image: radial-gradient(white 10%, transparent 11%);
+  background-size: 10px 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
