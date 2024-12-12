@@ -1,22 +1,26 @@
 .filter{
     &__order{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem 0;
         &__tittle{
             text-decoration: underline;
             font-family: 'Arial Black', Gadget, sans-serif;
-            font-size: 22px;
+            font-size: 1.375rem;
             font-weight: 700;
             color: #1A1A1A;
             text-transform: capitalize;
         }
         &__select{
-            display: flex;
-            justify-content: center;
             margin-bottom: 1rem;
             margin-top: 1rem;
-            border: 0;
-            text-decoration: underline;
-            text-align: center;
+            font-size: 1rem; 
             align-items: center;
+            background-color: #aaa;
+            &::placeholder {
+                color: white;
+            }
         }
     }
 }

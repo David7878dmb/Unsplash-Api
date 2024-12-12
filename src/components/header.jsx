@@ -32,8 +32,8 @@ const Header = () => {
         <form onSubmit={handleSearch}>
           <input
             type="text"
-            placeholder="Search..."
-            className="search-bar"
+            placeholder="Search Images"
+            className="header__center__search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

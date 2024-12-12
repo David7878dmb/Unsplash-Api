@@ -1,72 +1,74 @@
-.search__results{
-&__image{
-    &__card{
+
+.search__results__image {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+    &__card{ 
+        outline: 2px solid white;
+        &__photo{
+            width: 100%;
+        }
+    }
+    &__bar{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        
+    &__buttons{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        &__favorite, &__download, &__comment, &__info {
+            cursor: pointer;
+            
+            width: 1.875rem; 
+            height: 1.875rem;
+            }
+    }}
+}
+
+@media screen and (min-width: 1000px) {
+
+.search__results__image {
+margin-bottom: 0rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+&__card {
     background-size: cover;
     background-position: center;
     position: relative;
-    width: 90%;
-    height: 21rem;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    &__buttons{
-        position: absolute;
-        top: .625rem;
-        right: .625rem;
-        display: flex;
-        flex-direction: column;
-        gap: .625rem;
-        color: white;
-        &__favorite{
-            width: 1.875rem; 
-            height: 1.875rem;
-            cursor: pointer;
-        }
-        &__download{
-            width: 1.875rem; 
-            height: 1.875rem;
-            cursor: pointer;
-        }
-    }
-}}}
-
-@media screen and (min-width: 1000px) {
-.search__results{
-    margin-top:1.25rem;
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: 0 ;
     width: 100%;
-    justify-content: space-between;
-    &__image{
-        width: 30%;
-        display: flex;
-        position: relative;
-        margin-bottom: 1rem;
-        &__card{
-            background-size: cover;
-            background-position: center;
-            width: 90%;
-            height: 21rem;
-            margin-bottom: 1rem;
-        
-        &__buttons{
-            position: absolute;
-            top: .625rem;
-            right: .625rem;
-            display: flex;
-            flex-direction: row;
-            gap: .625rem;
-            &__favorite{
-                width: 1.875rem; 
-                height: 1.875rem;
-                cursor: pointer;
-            }
-            &__download{
-                width: 1.875rem; 
-                height: 1.875rem;
-                cursor: pointer;
-            }
+    margin-bottom: 1rem;
+    display: block;
+    height: auto;  
+    outline: 1px solid white;
+  
+  
+        &__photo {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
         }}
+  
+    &__bar {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      margin-top: -1.5rem;
+    
+    
+        &__buttons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        
+    
+            &__favorite, &__download, &__comment, &__info {
+            cursor: pointer;
+            font-size: 24px;
+            }
     }
-}
-}
+    }
+}}

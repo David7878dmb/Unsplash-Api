@@ -1,4 +1,8 @@
 .header {
+  outline: 2px solid white;
+  z-index: 2;
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: #AFAFDC;
   margin-bottom: 1rem;
@@ -10,6 +14,18 @@
 }
 .header__center {
   transform: translate(0%, 100%);
+}
+.header__center__search {
+  border: none;
+  background: transparent;
+  outline: 2px solid white;
+  font-size: 1rem;
+  color: white;
+  padding: 5px 10px;
+  width: 100%;
+}
+.header__center__search::placeholder {
+  color: white;
 }
 .header__left__link {
   text-decoration: none;
@@ -49,141 +65,81 @@
   cursor: pointer;
 }
 
-.search__results__image__card {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  width: 90%;
-  height: 21rem;
-  margin: 0 auto;
+.search__results__image {
   margin-bottom: 1rem;
-}
-.search__results__image__card__buttons {
-  position: absolute;
-  top: 0.625rem;
-  right: 0.625rem;
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
-  color: white;
 }
-.search__results__image__card__buttons__favorite {
+.search__results__image__card {
+  outline: 2px solid white;
+}
+.search__results__image__card__photo {
+  width: 100%;
+}
+.search__results__image__bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.search__results__image__bar__buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.search__results__image__bar__buttons__favorite, .search__results__image__bar__buttons__download, .search__results__image__bar__buttons__comment, .search__results__image__bar__buttons__info {
+  cursor: pointer;
   width: 1.875rem;
   height: 1.875rem;
-  cursor: pointer;
-}
-.search__results__image__card__buttons__download {
-  width: 1.875rem;
-  height: 1.875rem;
-  cursor: pointer;
 }
 
 @media screen and (min-width: 1000px) {
-  .search__results {
-    margin-top: 1.25rem;
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: 0;
-    width: 100%;
-    justify-content: space-between;
-  }
   .search__results__image {
-    width: 30%;
+    margin-bottom: 0rem;
     display: flex;
-    position: relative;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    justify-content: center;
   }
   .search__results__image__card {
     background-size: cover;
     background-position: center;
-    width: 90%;
-    height: 21rem;
-    margin-bottom: 1rem;
-  }
-  .search__results__image__card__buttons {
-    position: absolute;
-    top: 0.625rem;
-    right: 0.625rem;
-    display: flex;
-    flex-direction: row;
-    gap: 0.625rem;
-  }
-  .search__results__image__card__buttons__favorite {
-    width: 1.875rem;
-    height: 1.875rem;
-    cursor: pointer;
-  }
-  .search__results__image__card__buttons__download {
-    width: 1.875rem;
-    height: 1.875rem;
-    cursor: pointer;
-  }
-}
-.image__card__description {
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  width: 90%;
-  height: 21rem;
-  margin: 0 auto;
-  margin-bottom: 1rem;
-}
-.image__card__description__buttons {
-  position: absolute;
-  top: 0.625rem;
-  right: 0.625rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.625rem;
-  color: white;
-}
-.image__card__description__buttons__favorite {
-  width: 1.875rem;
-  height: 1.875rem;
-  cursor: pointer;
-}
-.image__card__description__buttons__download {
-  width: 1.875rem;
-  height: 1.875rem;
-  cursor: pointer;
-}
-.image__card__description__buttons__comment {
-  width: 1.875rem;
-  height: 1.875rem;
-  cursor: pointer;
-}
-.image__card__description__buttons__info {
-  width: 1.875rem;
-  height: 1.875rem;
-  cursor: pointer;
-}
-
-@media screen and (min-width: 1000px) {
-  .image {
-    margin-top: 1.25rem;
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: 0;
-    width: 100%;
-    justify-content: space-between;
-  }
-  .image__card {
-    width: 30%;
-    display: flex;
     position: relative;
+    width: 100%;
     margin-bottom: 1rem;
+    display: block;
+    height: auto;
+    outline: 1px solid white;
   }
-  .image__card__description {
-    background-size: cover;
-    background-position: center;
-    width: 90%;
-    height: 21rem;
-    margin-bottom: 1rem;
+  .search__results__image__card__photo {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
   }
-  .image__card__description__buttons {
-    position: absolute;
-    flex-direction: row;
-    color: white;
+  .search__results__image__bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: -1.5rem;
+  }
+  .search__results__image__bar__buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .search__results__image__bar__buttons__favorite, .search__results__image__bar__buttons__download, .search__results__image__bar__buttons__comment, .search__results__image__bar__buttons__info {
+    cursor: pointer;
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .random__images {
+    width: 98%;
+    margin-left: 1%;
+    display: flex;
+    gap: 1rem;
+  }
+  .random__images__column {
+    display: flex;
+    flex-direction: column;
   }
 }
 .comment__modal {
@@ -281,23 +237,29 @@
   height: 2rem;
 }
 
+.filter__order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
 .filter__order__tittle {
   text-decoration: underline;
   font-family: "Arial Black", Gadget, sans-serif;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 700;
   color: #1A1A1A;
   text-transform: capitalize;
 }
 .filter__order__select {
-  display: flex;
-  justify-content: center;
   margin-bottom: 1rem;
   margin-top: 1rem;
-  border: 0;
-  text-decoration: underline;
-  text-align: center;
+  font-size: 1rem;
   align-items: center;
+  background-color: #aaa;
+}
+.filter__order__select::placeholder {
+  color: white;
 }
 
 * {

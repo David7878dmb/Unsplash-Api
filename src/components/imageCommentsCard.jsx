@@ -9,6 +9,8 @@ import { FcLike } from "react-icons/fc";
 import { BsInfoCircle } from "react-icons/bs";
 import { FaRegCommentDots } from "react-icons/fa";
 import { downloadImageThunk } from '../search/searchThunk';
+
+
 const ImageCardWithComment = ({ photo }) => {
     const dispatch = useDispatch();
     const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
@@ -43,48 +45,102 @@ const ImageCardWithComment = ({ photo }) => {
     };
 
     return (
-        <div className='image__card'>
-        <div
-            className="image__card__description"
-            style={{
-                backgroundImage: `url(${photo.urls.small})`,
-            }}
-        >
-            <div className="image__card__description__buttons">
-                {isFavorite ? (
-                    <FcLike 
-                        onClick={handleFavoriteClick} 
-                        className="image__card__buttons__favorite" 
-                        style={{ cursor: 'pointer', fontSize: '24px' }} 
-                    />
-                ) : (
-                    <FaRegHeart 
-                        onClick={handleFavoriteClick} 
-                        className="image__card__buttons__favorite" 
-                        style={{ cursor: 'pointer', fontSize: '24px' }} 
-                    />
-                )}
-                <IoCloudDownloadSharp 
-                    alt="Download"
-                    onClick={handleDownloadClick}
-                    className="image__card__description__buttons__download"
-                    />
-                <FaRegCommentDots
+
+
+    <div className='search__results__image'>
+      <div 
+        className="search__results__image__card">
+
+        <img
+            className="search__results__image__card__photo"
+            src={photo.urls.small}
+            
+            />
+      </div>
+
+      <div className="search__results__image__bar">
+        <div className="search__results__image__bar__buttons">
+
+          {isFavorite ? (
+            <FcLike 
+              onClick={handleFavoriteClick} 
+              className="search__results__image__bar__buttons__favorite" 
+              style={{ cursor: 'pointer', fontSize: '24px' }}
+            />
+          ) : (
+            <FaRegHeart 
+              onClick={handleFavoriteClick} 
+              className="search__results__image__bar__buttons__favorite" 
+              style={{ cursor: 'pointer', fontSize: '24px' }}
+              />
+            )}
+              
+            <IoCloudDownloadSharp 
+                alt="Download"
+                className="search__results__image__bar__buttons__download" 
+                onClick={handleDownloadClick}
+                />
+                
+            <FaRegCommentDots
+                alt="Comment"
+                onClick={handleCommentClick}
+                className="search__results__image__bar__buttons__comment" 
+                />
+            <BsInfoCircle
+                alt="Info"
+                
+                className="search__results__image__bar__buttons__info" 
+                onClick={handleInfoClick}
+            />
+          
+          {comment && <div className="comment-text" />}
+          {isInfoModalOpen && <InfoModal image={photo} onClose={handleCloseModal} />}
+         
+        </div>
+      </div>
+    </div>
+
+
+        // <div className='image__card'>
+        // <div
+        //     className="image__card__description"
+        //     style={{
+        //         backgroundImage: `url(${photo.urls.small})`,
+        //     }}
+        // >
+        //     <div className="image__card__description__buttons">
+        //         {isFavorite ? (
+        //             <FcLike 
+        //                 onClick={handleFavoriteClick} 
+        //                 className="image__card__buttons__favorite" 
+        //                 style={{ cursor: 'pointer', fontSize: '24px' }} 
+        //             />
+        //         ) : (
+        //             <FaRegHeart 
+        //                 onClick={handleFavoriteClick} 
+        //                 className="image__card__buttons__favorite" 
+        //                 style={{ cursor: 'pointer', fontSize: '24px' }} 
+        //             />
+        //         )}
+        //         <IoCloudDownloadSharp 
+        //             alt="Download"
+        //             onClick={handleDownloadClick}
+        //             className="image__card__description__buttons__download"
+        //             />
+        //         <FaRegCommentDots
                    
-                    alt="Comment"
-                    onClick={handleCommentClick}
-                    className="image__card__description__buttons__comment"
-                />
-                <BsInfoCircle
-                    alt="Info"
-                    className="image__card__description__buttons__info"
-                    onClick={handleInfoClick}
-                />
-            </div>
-            {comment && <div className="comment-text" />}
-            {isInfoModalOpen && <InfoModal image={photo} onClose={handleCloseModal} />}
-        </div>
-        </div>
+        //             alt="Comment"
+        //             onClick={handleCommentClick}
+        //             className="image__card__description__buttons__comment"
+        //         />
+        //         <BsInfoCircle
+        //             alt="Info"
+        //             className="image__card__description__buttons__info"
+        //             onClick={handleInfoClick}
+        //         />
+        //     </div>
+        // </div>
+        // </div>
     );
 };
 

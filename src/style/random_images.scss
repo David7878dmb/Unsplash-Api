@@ -1,0 +1,64 @@
+// .random__images{
+//     &__image{
+//         &__card{
+//         background-size: cover;
+//         background-position: center;
+//         position: relative;
+//         width: 90%;
+//         height: 21rem;
+//         margin: 0 auto;
+//         margin-bottom: 1rem;
+//         &__buttons{
+//             position: absolute;
+//             top: .625rem;
+//             right: .625rem;
+//             display: flex;
+//             flex-direction: column;
+//             gap: .625rem;
+//             color: white;
+//             &__favorite{
+//                 width: 1.875rem; 
+//                 height: 1.875rem;
+//                 cursor: pointer;
+//             }
+//             &__download{
+//                 width: 1.875rem; 
+//                 height: 1.875rem;
+//                 cursor: pointer;
+//             }
+//         }
+//     }}
+
+//     &__button{
+        
+//         display: block;
+//         margin: 20px auto;
+//         padding: 10px 20px;
+//         background-color: #007bff;
+//         color: white;
+//         border: none;
+//         border-radius: 5px;
+//         cursor: pointer;
+//         font-size: 16px;
+          
+//     }  
+//     &__button:hover {
+//         background-color: #0056b3;
+//       }
+          
+//     }
+    
+    @media screen and (min-width: 1000px) {
+        .random__images {
+
+          width: 98%;
+          margin-left: 1%;
+            display: flex;
+            
+            gap: 1rem;  // Añade espacio entre las imágenes
+          }
+          
+          .random__images__column {
+            display: flex;
+            flex-direction: column;
+          }}

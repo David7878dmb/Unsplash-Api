@@ -1,3 +1,4 @@
+
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { clientId, getRandomPhotosEndpoint, getSearchPhotosEndpoint } from "../App/api/keys";
 
@@ -5,9 +6,9 @@ import { clientId, getRandomPhotosEndpoint, getSearchPhotosEndpoint } from "../A
 //random
 export const FetchImagesListThunk = createAsyncThunk(
   "imgs/fetchImagesList",
-  async () => {
+  async (page = 1) => { // Agregar soporte para la paginación
     try {
-      const url = getRandomPhotosEndpoint();
+      const url = getRandomPhotosEndpoint(page); // Modifica la URL para incluir la página
       const response = await fetch(url, {
         method: "GET",
         headers: {
@@ -26,7 +27,7 @@ export const FetchImagesListThunk = createAsyncThunk(
       console.error("Error fetching images:", error);
       throw error(error);
     }
-    }
+  }
 );
 
 
@@ -46,7 +47,7 @@ export const FetchSearchImagesListThunk = createAsyncThunk(
 
       if (response.ok) {
         const data = await response.json();
-        return data.results; // Los resultados de búsqueda están en `data.results`
+        return data.results;
       } else {
         throw new Error("Failed to fetch search images");
       }

@@ -1,67 +1,67 @@
-.image__card__description{
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    width: 90%;
-    height: 21rem;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    &__buttons{
-        position: absolute;
-        top: .625rem;
-        right: .625rem;
-        display: flex;
-        flex-direction: column;
-        gap: .625rem;
-        color: white;
-        &__favorite{
-            width: 1.875rem; 
-            height: 1.875rem;
-            cursor: pointer;
-        }
-        &__download{
-            width: 1.875rem; 
-            height: 1.875rem;
-            cursor: pointer;
-        }
-        &__comment{
-            width: 1.875rem; 
-            height: 1.875rem;
-            cursor: pointer;
-        }
-        &__info{
-            width: 1.875rem; 
-            height: 1.875rem;
-            cursor: pointer;
-        }
-    }
-}
-@media screen and (min-width: 1000px) {
-.image{
-    margin-top:1.25rem;
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: 0 ;
-    width: 100%;
-    justify-content: space-between;
-    &__card{
-        width: 30%;
-        display: flex;
-        position: relative;
-        margin-bottom: 1rem;
-        &__description{
-            background-size: cover;
-            background-position: center;
-            width: 90%;
-            height: 21rem;
-            margin-bottom: 1rem;
+// .image__card__description{
+//     background-size: cover;
+//     background-position: center;
+//     position: relative;
+//     width: 90%;
+//     height: 21rem;
+//     margin: 0 auto;
+//     margin-bottom: 1rem;
+//     &__buttons{
+//         position: absolute;
+//         top: .625rem;
+//         right: .625rem;
+//         display: flex;
+//         flex-direction: column;
+//         gap: .625rem;
+//         color: white;
+//         &__favorite{
+//             width: 1.875rem; 
+//             height: 1.875rem;
+//             cursor: pointer;
+//         }
+//         &__download{
+//             width: 1.875rem; 
+//             height: 1.875rem;
+//             cursor: pointer;
+//         }
+//         &__comment{
+//             width: 1.875rem; 
+//             height: 1.875rem;
+//             cursor: pointer;
+//         }
+//         &__info{
+//             width: 1.875rem; 
+//             height: 1.875rem;
+//             cursor: pointer;
+//         }
+//     }
+// }
+// @media screen and (min-width: 1000px) {
+// .image{
+//     margin-top:1.25rem;
+//     display: flex;
+//     flex-flow: row wrap;
+//     margin-left: 0 ;
+//     width: 100%;
+//     justify-content: space-between;
+//     &__card{
+//         width: 30%;
+//         display: flex;
+//         position: relative;
+//         margin-bottom: 1rem;
+//         &__description{
+//             background-size: cover;
+//             background-position: center;
+//             width: 90%;
+//             height: 21rem;
+//             margin-bottom: 1rem;
 
-            &__buttons{
-                position: absolute;
-                flex-direction: row;
-                color: white;
-            }
-        }
-    }
-    }
-}
+//             &__buttons{
+//                 position: absolute;
+//                 flex-direction: row;
+//                 color: white;
+//             }
+//         }
+//     }
+//     }
+// }

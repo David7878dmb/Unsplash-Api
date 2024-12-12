@@ -22,7 +22,7 @@ export const ImagesSlice = createSlice({
     })
     .addCase(FetchImagesListThunk.fulfilled, (state, action) => {
         state.status = "fulfilled";
-        state.randomPhotos = action.payload == null ? [] : action.payload;
+        state.randomPhotos = [...state.randomPhotos, ...action.payload];
     })
     .addCase(FetchImagesListThunk.rejected,(state, action) => {
         state.status = "rejected";
@@ -64,5 +64,3 @@ export const ImagesSlice = createSlice({
 
 
 export default ImagesSlice.reducer;
-
-
