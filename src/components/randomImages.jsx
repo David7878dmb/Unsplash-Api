@@ -7,9 +7,7 @@ import Masonry from 'react-masonry-css';
 const RandomImages = () => {
   const dispatch = useDispatch();
   const {randomPhotos, status, error} = useSelector((state) => state.imgs);
-  //const randomPhotos = useSelector((state) => state.imgs.randomPhotos);
-  //const status = useSelector((state) => state.imgs.status);
-  //const error = useSelector((state) => state.imgs.error.randomPhotos);
+
   
   const [imagesToShow, setImagesToShow] = useState(24);
   const [page, setPage] = useState(1);
@@ -19,15 +17,15 @@ const RandomImages = () => {
   }, [dispatch, page]);
 
   const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1); // Incrementa la página
-    setImagesToShow((prevCount) => prevCount + 12); // Opcional, para mostrar más en pantalla
+    setPage((prevPage) => prevPage + 1); 
+    setImagesToShow((prevCount) => prevCount + 12); 
   };
 
   const breakpointColumns = {
-    default: 4,  // 4 columnas por defecto
-    1100: 3,     // 3 columnas para pantallas más pequeñas
-    700: 2,      // 2 columnas en pantallas medianas
-    500: 1,      // 1 columna en pantallas pequeñas
+    default: 4,  
+    1100: 3,     
+    700: 2,     
+    500: 1,
   };
 
   if (status === 'pending') {

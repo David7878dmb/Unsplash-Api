@@ -88,7 +88,9 @@
     position: relative;
     width: 100%;
     margin-bottom: 1rem;
+    display: block;
     height: auto;
+    outline: 2px solid white;
   }
   .search__results__image__card__photo {
     max-width: 100%;
@@ -106,7 +108,7 @@
     gap: 1rem;
     align-items: center;
   }
-  .search__results__image__bar__buttons__favorite, .search__results__image__bar__buttons__download {
+  .search__results__image__bar__buttons__favorite, .search__results__image__bar__buttons__download, .search__results__image__bar__buttons__comment, .search__results__image__bar__buttons__info {
     cursor: pointer;
     font-size: 24px;
   }

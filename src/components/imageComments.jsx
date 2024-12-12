@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Select from 'react-select';
 import ImageCardWithComment from './imageCommentsCard';
+import Masonry from 'react-masonry-css';
 
 const ImageGalleryWithSort = () => {
     const sortedOptions = {
@@ -10,6 +11,14 @@ const ImageGalleryWithSort = () => {
         height: 'height',
         likes: 'likes'
     };
+
+    const breakpointColumns = {
+        default: 4, 
+        1100: 3,    
+        700: 2, 
+        500: 1,     
+        
+      };
 
     const options = [
         { value: sortedOptions.addDate, label: 'Añadido' },
@@ -59,11 +68,17 @@ const ImageGalleryWithSort = () => {
                     />
                 </div>
             </section>
-            <section className="image">
+        <div className='random'>
+            <Masonry
+                breakpointCols={breakpointColumns}
+                className="random__images"
+                columnClassName="random__images__column"
+            >
                 {sortedImages.map(photo => (
                     <ImageCardWithComment key={photo.id} photo={photo} />
                 ))}
-            </section>
+            </Masonry>
+        </div>            
         </div>
     );
 };
