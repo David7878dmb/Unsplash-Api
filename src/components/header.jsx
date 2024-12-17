@@ -5,7 +5,7 @@ import { FetchSearchImagesListThunk } from '../search/searchThunk';
 import { useState } from 'react';
 import { PiFinnTheHumanBold } from "react-icons/pi";
 import { ImHome } from "react-icons/im";
-import { FaSearch } from "react-icons/fa";
+
 
 
 const Header = () => {

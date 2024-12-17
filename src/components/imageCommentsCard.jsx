@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, removeFav } from '../fav/favSlice';
-import { openModal, closeModal, setComment } from '../components/description/descriptionSlice';
+import { openModal} from '../components/description/descriptionSlice';
 import InfoModal from './info/infoModal';
 import { FaRegHeart } from "react-icons/fa6";
-import { IoCloudDownloadSharp } from "react-icons/io5";
 import { FcLike } from "react-icons/fc";
 import { BsInfoCircle } from "react-icons/bs";
 import { FaRegCommentDots } from "react-icons/fa";
-import { downloadImageThunk } from '../search/searchThunk';
+
 
 
 const ImageCardWithComment = ({ photo }) => {
@@ -32,9 +31,7 @@ const ImageCardWithComment = ({ photo }) => {
         dispatch(openModal(photo.id));
     };
 
-    const handleDownloadClick = () => {
-        dispatch(downloadImageThunk(photo.id));
-    };
+
 
     const handleInfoClick = () => {
         setIsInfoModalOpen(true);
@@ -75,11 +72,7 @@ const ImageCardWithComment = ({ photo }) => {
               />
             )}
               
-            <IoCloudDownloadSharp 
-                alt="Download"
-                className="search__results__image__bar__buttons__download" 
-                onClick={handleDownloadClick}
-                />
+      
                 
             <FaRegCommentDots
                 alt="Comment"
@@ -100,47 +93,6 @@ const ImageCardWithComment = ({ photo }) => {
       </div>
     </div>
 
-
-        // <div className='image__card'>
-        // <div
-        //     className="image__card__description"
-        //     style={{
-        //         backgroundImage: `url(${photo.urls.small})`,
-        //     }}
-        // >
-        //     <div className="image__card__description__buttons">
-        //         {isFavorite ? (
-        //             <FcLike 
-        //                 onClick={handleFavoriteClick} 
-        //                 className="image__card__buttons__favorite" 
-        //                 style={{ cursor: 'pointer', fontSize: '24px' }} 
-        //             />
-        //         ) : (
-        //             <FaRegHeart 
-        //                 onClick={handleFavoriteClick} 
-        //                 className="image__card__buttons__favorite" 
-        //                 style={{ cursor: 'pointer', fontSize: '24px' }} 
-        //             />
-        //         )}
-        //         <IoCloudDownloadSharp 
-        //             alt="Download"
-        //             onClick={handleDownloadClick}
-        //             className="image__card__description__buttons__download"
-        //             />
-        //         <FaRegCommentDots
-                   
-        //             alt="Comment"
-        //             onClick={handleCommentClick}
-        //             className="image__card__description__buttons__comment"
-        //         />
-        //         <BsInfoCircle
-        //             alt="Info"
-        //             className="image__card__description__buttons__info"
-        //             onClick={handleInfoClick}
-        //         />
-        //     </div>
-        // </div>
-        // </div>
     );
 };
 
