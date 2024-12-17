@@ -20,8 +20,6 @@ const ImageCard = ({ photo }) => {
   };
 
 
-
-
   return (
     <div className='search__results__image'>
       <div 
