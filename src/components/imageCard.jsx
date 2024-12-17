@@ -1,9 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, removeFav } from '../fav/favSlice'; 
-import { downloadImageThunk } from '../search/searchThunk';
 import { FaRegHeart } from "react-icons/fa6";
-import { IoCloudDownloadSharp } from "react-icons/io5";
 import { FcLike } from "react-icons/fc";
 
 
@@ -21,9 +19,7 @@ const ImageCard = ({ photo }) => {
     }
   };
 
-  const handleDownloadClick = () => {
-    dispatch(downloadImageThunk(photo.id))
-  };
+
 
 
   return (

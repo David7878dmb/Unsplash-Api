@@ -22,15 +22,7 @@ const SearchResults = () => {
   }
 
   return (
-  //   <div className="search__results">
-  //   {searchPhotos.length > 0 ? (
-  //     searchPhotos.map((photo) => (
-  //       <ImageCard key={photo.id} photo={photo} />
-  //     ))
-  //   ) : (
-  //     <p>No results found</p>
-  //   )}
-  // </div>
+
 
     <div className="random">
       <Masonry
