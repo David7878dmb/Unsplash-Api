@@ -20,8 +20,6 @@ const ImageCard = ({ photo }) => {
   };
 
 
-
-
   return (
     <div className='search__results__image'>
       <div 
@@ -29,7 +27,7 @@ const ImageCard = ({ photo }) => {
 
         <img
             className="search__results__image__card__photo"
-            src={photo.urls.thumb}
+            src={photo.urls.regular}
             
             />
       </div>
